@@ -1,10 +1,12 @@
 import express from "express"; // "type": "module"
 import fs from 'fs';
+import dotenv from "dotenv";
+dotenv.config();
 
 const app = express();
 app.use(express.json());
 
-const PORT = 4000; //not using dotenv here
+const PORT = process.env.PORT; //not using dotenv here
 
 // Default request 
 app.get("/", function (request, response) {
